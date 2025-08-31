@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Linktree</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 10px 0;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    
+    .subtitle {
+      color: #7f8c8d;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .links-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    
+    .link-item {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: #2c3e50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .link-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .link-item i {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #3498db;
+    }
+    
+    .link-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    
+    .link-item p {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      text-align: center;
+      max-width: 250px;
+    }
+    
+    .link-item a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    
+    .link-item a:hover {
+      background: #2980b9;
+    }
+    
+    /* Smooth scrolling */
+    body a[href^="#"] {
+      scroll-behavior: smooth;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .links-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Name</h1>
+      <p class="subtitle">A simple Linktree-style static site with no server needed</p>
+    </header>
+
+    <div class="links-container">
+      <a href="#social" class="link-item">
+        <i>📱</i>
+        <h3>Social</h3>
+        <p>Connect with me on social media</p>
+        <a href="https://twitter.com/yourhandle">Twitter</a>
+      </a>
+      
+      <a href="#portfolio" class="link-item">
+        <i>🎨</i>
+        <h3>Portfolio</h3>
+        <p>My creative projects</p>
+        <a href="https://yourportfolio.com">View Portfolio</a>
+      </a>
+      
+      <a href="#contact" class="link-item">
+        <i>✉️</i>
+        <h3>Contact</h3>
+        <p>Get in touch</p>
+        <a href="mailto:you@example.com">Email me</a>
+      </a>
+      
+      <a href="#about" class="link-item">
+        <i>👤</i>
+        <h3>About</h3>
+        <p>Learn about me</p>
+        <a href="https://yourabout.com">Read more</a>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll for all links (works with hash routing)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
